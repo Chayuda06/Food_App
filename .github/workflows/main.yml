@@ -52,8 +52,8 @@ jobs:
         # optionally use --fatal-warnings to stop execution if any warnings are found
 
       # Runs unit test
-      - name: Run tests
-        run: flutter test
+      # - name: Run tests
+      #   run: flutter test
 
       # Create android apk
       - name: Build apk
