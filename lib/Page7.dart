@@ -1,12 +1,15 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Page7 extends StatefulWidget {
-  Page7({Key? key, required this.title}) : super(key: key);
+  const Page7({super.key, required this.title});
 
   final String title;
 
   @override
+  // ignore: library_private_types_in_public_api
   _Page7State createState() => _Page7State();
 }
 
@@ -54,7 +57,7 @@ class _Page7State extends State<Page7> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(12.0),
+          padding: const EdgeInsets.all(12.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
@@ -65,7 +68,7 @@ class _Page7State extends State<Page7> {
                 },
                 child: Text('ไปหน้าแรก', style: TextStyle(fontSize: screenWidth * 0.04)),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               // แสดงรายละเอียดเมนู
               Text(
@@ -76,25 +79,25 @@ class _Page7State extends State<Page7> {
                 ),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Image.asset(
                 menuDetails['image']!,
                 width: screenWidth * 0.7,
                 height: screenWidth * 0.45,
                 fit: BoxFit.cover,
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 'คำอธิบาย: ${menuDetails['description']}',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: screenWidth * 0.04),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 'ราคา: ${menuDetails['price']}',
                 style: TextStyle(fontSize: screenWidth * 0.045, color: Colors.green),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               // การกดถูกใจและไม่ถูกใจ
               Row(
@@ -109,7 +112,7 @@ class _Page7State extends State<Page7> {
                       Text('ถูกใจ: $likeCount', style: TextStyle(fontSize: screenWidth * 0.04)),
                     ],
                   ),
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   Column(
                     children: [
                       IconButton(
@@ -121,16 +124,16 @@ class _Page7State extends State<Page7> {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               // ปุ่มเปิด YouTube
               ElevatedButton(
                 onPressed: _launchYouTube,  // เมื่อกดปุ่มจะเปิด YouTube
-                child: Text('เปิด YouTube'),
+                child: const Text('เปิด YouTube'),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
                IconButton(
-            icon: Icon(Icons.home),
+            icon: const Icon(Icons.home),
             onPressed: () {
              Navigator.pushNamed(context, '/');  // กลับไปหน้าหลัก
             },
@@ -144,9 +147,11 @@ class _Page7State extends State<Page7> {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Page7(title: 'หน้าที่7'),
     );

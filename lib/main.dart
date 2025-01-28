@@ -8,10 +8,12 @@ import 'Page6.dart';
 import 'Page7.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,13 +25,13 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => HomeScreen(),
-        '/page1': (context) => Page1(title: 'หมูสามชั้นคั่วพริกเกลือ'),
-        '/page2': (context) => Page2(title: 'ก๋วยเตี๋ยว'),
-        '/page3': (context) => Page3(title: 'ส้มตำ'),
-        '/page4': (context) => Page4(title: 'ผัดเผ็ดหน่อไม้'),
-        '/page5': (context) => Page5(title: 'บัวลอย'),
-        '/page6': (context) => Page6(title: 'ไข่นกกระทา'),
-        '/page7': (context) => Page7(title: 'ลูกตาลลอยแก้ว'),
+        '/page1': (context) => const Page1(title: 'หมูสามชั้นคั่วพริกเกลือ'),
+        '/page2': (context) => const Page2(title: 'ก๋วยเตี๋ยว'),
+        '/page3': (context) => const Page3(title: 'ส้มตำ'),
+        '/page4': (context) => const Page4(title: 'ผัดเผ็ดหน่อไม้'),
+        '/page5': (context) => const Page5(title: 'บัวลอย'),
+        '/page6': (context) => const Page6(title: 'ไข่นกกระทา'),
+        '/page7': (context) => const Page7(title: 'ลูกตาลลอยแก้ว'),
       },
     );
   }
@@ -49,6 +51,8 @@ class HomeScreen extends StatelessWidget {
     {'image': 'pic/looktal.jpg', 'title': 'ลูกตาลลอยแก้ว', 'description': 'ลูกตาลลอยแก้วสดชื่น'},
   ];
 
+   HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -57,20 +61,20 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('เมนูอาหารและของว่าง'),
+        title: const Text('เมนูอาหารและของว่าง'),
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Text(
                 'อาหารแนะนำ',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ),
-            Container(
+            SizedBox(
               height: 230,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -86,7 +90,7 @@ class HomeScreen extends StatelessWidget {
                       child: Card(
                         elevation: 4.0,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                        child: Container(
+                        child: SizedBox(
                           width: cardWidth,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -97,30 +101,30 @@ class HomeScreen extends StatelessWidget {
                                 height: imageSize,
                                 fit: BoxFit.cover,
                               ),
-                              SizedBox(height: 8),
+                              const SizedBox(height: 8),
                               Text(
                                 item['title']!,
-                                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                                style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                                 textAlign: TextAlign.center,
                               ),
-                              SizedBox(height: 4),
+                              const SizedBox(height: 4),
                               Text(
                                 item['description']!,
-                                style: TextStyle(fontSize: 10),
+                                style: const TextStyle(fontSize: 10),
                                 textAlign: TextAlign.center,
                               ),
-                              SizedBox(height: 8),
+                              const SizedBox(height: 8),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   IconButton(
-                                    icon: Icon(Icons.favorite, color: Colors.red, size: 20),
+                                    icon: const Icon(Icons.favorite, color: Colors.red, size: 20),
                                     onPressed: () {
                                       // บันทึกในรายการโปรด
                                     },
                                   ),
                                   IconButton(
-                                    icon: Icon(Icons.share, color: Colors.blue, size: 20),
+                                    icon: const Icon(Icons.share, color: Colors.blue, size: 20),
                                     onPressed: () {
                                       // แชร์เมนูนี้
                                     },
@@ -136,14 +140,14 @@ class HomeScreen extends StatelessWidget {
                 },
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Text(
                 'ของว่างแนะนำ',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ),
-            Container(
+            SizedBox(
               height: 230,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -159,7 +163,7 @@ class HomeScreen extends StatelessWidget {
                       child: Card(
                         elevation: 4.0,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                        child: Container(
+                        child: SizedBox(
                           width: cardWidth,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -170,30 +174,30 @@ class HomeScreen extends StatelessWidget {
                                 height: imageSize,
                                 fit: BoxFit.cover,
                               ),
-                              SizedBox(height: 8),
+                              const SizedBox(height: 8),
                               Text(
                                 item['title']!,
-                                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                                style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                                 textAlign: TextAlign.center,
                               ),
-                              SizedBox(height: 4),
+                              const SizedBox(height: 4),
                               Text(
                                 item['description']!,
-                                style: TextStyle(fontSize: 10),
+                                style: const TextStyle(fontSize: 10),
                                 textAlign: TextAlign.center,
                               ),
-                              SizedBox(height: 8),
+                              const SizedBox(height: 8),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   IconButton(
-                                    icon: Icon(Icons.favorite, color: Colors.red, size: 20),
+                                    icon: const Icon(Icons.favorite, color: Colors.red, size: 20),
                                     onPressed: () {
                                       // บันทึกในรายการโปรด
                                     },
                                   ),
                                   IconButton(
-                                    icon: Icon(Icons.share, color: Colors.blue, size: 20),
+                                    icon: const Icon(Icons.share, color: Colors.blue, size: 20),
                                     onPressed: () {
                                       // แชร์เมนูนี้
                                     },

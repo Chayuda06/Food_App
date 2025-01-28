@@ -1,12 +1,15 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Page6 extends StatefulWidget {
-  Page6({Key? key, required this.title}) : super(key: key);
+  const Page6({super.key, required this.title});
 
   final String title;
 
   @override
+  // ignore: library_private_types_in_public_api
   _Page6State createState() => _Page6State();
 }
 
@@ -127,11 +130,11 @@ class _Page6State extends State<Page6> {
             // ปุ่มเปิด YouTube
             ElevatedButton(
                 onPressed: _launchYouTube,  // เมื่อกดปุ่มจะเปิด YouTube
-                child: Text('เปิด YouTube'),
+                child: const Text('เปิด YouTube'),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
                IconButton(
-            icon: Icon(Icons.home),
+            icon: const Icon(Icons.home),
             onPressed: () {
               Navigator.pushNamed(context, '/');  // กลับไปหน้าหลัก
             },
@@ -148,9 +151,11 @@ class _Page6State extends State<Page6> {
 // }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Page6(title: 'หน้าที่6'),
     );

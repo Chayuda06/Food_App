@@ -1,12 +1,15 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Page4 extends StatefulWidget {
-  Page4({Key? key, required this.title}) : super(key: key);
+  const Page4({super.key, required this.title});
 
   final String title;
 
   @override
+  // ignore: library_private_types_in_public_api
   _Page4State createState() => _Page4State();
 }
 
@@ -55,7 +58,7 @@ class _Page4State extends State<Page4> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
@@ -64,34 +67,34 @@ class _Page4State extends State<Page4> {
                 onPressed: () {
                   Navigator.pushNamed(context, '/page5');  
                 },
-                child: Text('ไปหน้าที่ห้า'),
+                child: const Text('ไปหน้าที่ห้า'),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               
               // แสดงรายละเอียดของเมนู
               Text(
                 'รายละเอียดเมนู: ${menuDetails['title']}',
                 style: TextStyle(fontSize: screenWidth * 0.05, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Image.asset(
                 menuDetails['image']!,
                 width: screenWidth * 0.7,  // กำหนดความกว้างของภาพให้เหมาะสม
                 height: screenWidth * 0.45,  // ความสูงของภาพ
                 fit: BoxFit.cover,
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 'คำอธิบาย: ${menuDetails['description']}',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: screenWidth * 0.04),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 'ราคา: ${menuDetails['price']}',
                 style: TextStyle(fontSize: screenWidth * 0.045, color: Colors.green),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               // การกดถูกใจและไม่ถูกใจ
               Row(
@@ -100,17 +103,17 @@ class _Page4State extends State<Page4> {
                   Column(
                     children: [
                       IconButton(
-                        icon: Icon(Icons.thumb_up),
+                        icon: const Icon(Icons.thumb_up),
                         onPressed: _incrementLike,
                       ),
                       Text('ถูกใจ: $likeCount'),
                     ],
                   ),
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   Column(
                     children: [
                       IconButton(
-                        icon: Icon(Icons.thumb_down),
+                        icon: const Icon(Icons.thumb_down),
                         onPressed: _incrementDislike,
                       ),
                       Text('ไม่ถูกใจ: $dislikeCount'),
@@ -118,16 +121,16 @@ class _Page4State extends State<Page4> {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               // ปุ่มเปิด YouTube
               ElevatedButton(
                 onPressed: _launchYouTube,  // เมื่อกดปุ่มจะเปิด YouTube
-                child: Text('เปิด YouTube'),
+                child: const Text('เปิด YouTube'),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
                IconButton(
-            icon: Icon(Icons.home),
+            icon: const Icon(Icons.home),
             onPressed: () {
               Navigator.pushNamed(context, '/');  // กลับไปหน้าหลัก
             },
@@ -141,9 +144,11 @@ class _Page4State extends State<Page4> {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Page4(title: 'หน้าที่4'),
     );
