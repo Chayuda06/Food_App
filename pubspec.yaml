@@ -1,0 +1,37 @@
+name: food
+description: "A new Flutter project."
+publish_to: 'none'  
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.5.4 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  url_launcher: ^6.0.20
+  firebase_core: ^3.8.1
+  flutter_launcher_icons: ^0.14.2
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/icon.png"
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - pic/moosamchan.jpg
+    - pic/noodle.jpg
+    - pic/somtum.jpg
+    - pic/padped.jpg
+    - pic/boaloy.jpg
+    - pic/kainook.jpg
+    - pic/looktal.jpg
