@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         '/page2': (context) => const Page2(title: 'ก๋วยเตี๋ยว'),
         '/page3': (context) => const Page3(title: 'ส้มตำ'),
         '/page4': (context) => const Page4(title: 'ผัดเผ็ดหน่อไม้'),
-        '/page5': (context) => const Page5(title: 'บัวลอย'),
+        '/page5': (context) => cot Page5(title: 'บัวลอย'),
         '/page6': (context) => const Page6(title: 'ไข่นกกระทา'),
         '/page7': (context) => const Page7(title: 'ลูกตาลลอยแก้ว'),
       },
